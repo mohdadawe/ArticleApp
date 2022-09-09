@@ -1,36 +1,35 @@
 package com.example.test.Screens
 
 import android.widget.Toast
-import androidx.compose.foundation.background
+//import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.layout.R
+//import androidx.compose.foundation.layout.R
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.rememberCoroutineScope
+//import androidx.compose.runtime.collectAsState
+//import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.colorResource
+//import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.test.Classes.Screen
-import com.example.test.DataStore.StoreUserName
-import kotlinx.coroutines.launch
+//import com.example.test.DataStore.StoreUserName
+//import com.example.test.DataStore.StoreUserName
+//import kotlinx.coroutines.launch
 
 @Composable
 fun Screen_A_with_WithTopBar(
-   navController: NavController,
-   /*usernameViewModel: UsernameViewModel,
-   passwordViewModel: PasswordViewModel*/
+   navController: NavController
 ) {
    Scaffold(
       topBar = {
@@ -63,21 +62,19 @@ fun Screen_A_with_WithTopBar(
 
 @Composable
 fun Screen_A(
-   navController: NavController,
-   /*usernameViewModel: UsernameViewModel,
-   passwordViewModel: PasswordViewModel*/
+   navController: NavController
 ) {
    val context = LocalContext.current
    //val shared = passwordViewModel.person
 
-   val scope = rememberCoroutineScope()
+   //val scope = rememberCoroutineScope()
    // we instantiate the saveEmail class
-   val person = StoreUserName(context)
+   //val person = StoreUserName(context)
 
-   val Result_SessionID     = person.getSessionID.collectAsState(initial = "")
-   val Result_Username      = person.getUsername.collectAsState(initial = "")
-   val Result_Password      = person.getPassword.collectAsState(initial = "")
-   val Result_AccountStatus = person.getAccountStatus.collectAsState(initial = "")
+   //val Result_SessionID     = person.getSessionID.collectAsState(initial = "")
+   //val Result_Username      = person.getUsername.collectAsState(initial = "")
+   //val Result_Password      = person.getPassword.collectAsState(initial = "")
+   //val Result_AccountStatus = person.getAccountStatus.collectAsState(initial = "")
 
    //val Result_UserDetailsID = person.getUserDetailsID.collectAsState(initial = "")
    //val Result_AccountType = person.getAccountType.collectAsState(initial = "")
@@ -124,7 +121,7 @@ fun Screen_A(
                .width(170.dp)
                .height(80.dp)
                .clickable {
-                  navController.navigate(Screen.vouchers_Menu.route)
+                  navController.navigate(Screen.Vouchers_Menu.route)
                },
             RoundedCornerShape(7.dp),
             elevation = 5.dp
@@ -145,11 +142,11 @@ fun Screen_A(
                   Toast
                      .makeText(context, "Signout", Toast.LENGTH_SHORT)
                      .show()
-                  scope.launch {
-                     person.saveUsername("")
-                     person.savePassword("")
-                     person.saveAccountStatus("")
-                  }
+                  //scope.launch {
+                     //person.saveUsername("")
+                     //person.savePassword("")
+                     //person.saveAccountStatus("")
+                  //}
                   //navController.navigate(Screen.DropDownMenu.route)
                   //Alert()
                },

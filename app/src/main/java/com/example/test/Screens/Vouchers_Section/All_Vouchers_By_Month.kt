@@ -39,8 +39,8 @@ fun All_Vouchers_By_Month_Screen_WithTopBar(
             },
             navigationIcon = {
                IconButton(onClick = {
-                  navController.navigate(Screen.vouchers_Menu.route){
-                     popUpTo(Screen.vouchers_Menu.route) {
+                  navController.navigate(Screen.Vouchers_Menu.route){
+                     popUpTo(Screen.Vouchers_Menu.route) {
                         inclusive = true
                      }
                   }
@@ -54,7 +54,7 @@ fun All_Vouchers_By_Month_Screen_WithTopBar(
          )
       }, content = {
 
-         All_Vouchers_By_Month_Screen(navController)
+         All_Vouchers_By_Month_Screen()
 
       }
    )
@@ -63,7 +63,7 @@ fun All_Vouchers_By_Month_Screen_WithTopBar(
 
 @Composable
 fun All_Vouchers_By_Month_Screen(
-   navController: NavController
+   /*navController: NavController*/
 ) {
    Column(
       modifier = Modifier
@@ -85,7 +85,7 @@ fun All_Vouchers_By_Month_Screen(
       //val baseUrl = "https://adeega.xisaabso.online/Api/android_last_vouchers.php"
       val baseUrl = "https://adeega.xisaabso.online/Api/Article.php"
 
-      val Articles = Article()
+      val articles = Article()
 
       val data = remember {
          mutableStateOf(Article())
@@ -95,9 +95,9 @@ fun All_Vouchers_By_Month_Screen(
          val gsonBuilder = GsonBuilder()
          val gson = gsonBuilder.create()
          gson.fromJson(it, Array<ArticleItem>::class.java)?.forEach {
-            Articles.add(it)
+            articles.add(it)
          }
-         data.value = Articles
+         data.value = articles
 
       }, {
          Toast.makeText(context, it.toString(), Toast.LENGTH_SHORT).show()

@@ -2,9 +2,9 @@ package com.example.test.Classes
 
 sealed class Screen(val route: String) {
 
-   object DashBoard: Screen(route = "DashBoard")
+   //object DashBoard: Screen(route = "DashBoard")
    object Home: Screen(route = "Home")
-   object vouchers_Menu: Screen(route = "vouchers_menu")
+   object Vouchers_Menu: Screen(route = "vouchers_menu")
    object AllVouchersByMonth: Screen(route = "AllVouchersByMonth_Screen")
 
    //object C: Screen(route = "C")
